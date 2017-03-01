@@ -48,11 +48,12 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails', '~> 3.5', '>= 3.5.2'
   gem 'simplecov', '~> 0.12.0', require: false
-  gem 'guard-rspec', require: false
+  
   
 end
 gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 group :development do
+  gem 'guard-rspec', require: false
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console'
 

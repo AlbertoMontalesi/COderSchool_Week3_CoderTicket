@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   resources :users
   root 'events#index'
+  get '/upcoming' => 'events#index' 
+  get '/sign_up' => 'users#new'
 
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
@@ -10,8 +12,7 @@ Rails.application.routes.draw do
 
 
   
-  #get 'sessions/new', as: :login #alternatively  can use resources only: [:new, :create]
-  #post 'sessions' => 'session#create', as: :submit_login 
+ 
   
   
   end
