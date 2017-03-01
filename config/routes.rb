@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'events#index'
   get '/upcoming' => 'events#index' 
   get '/sign_up' => 'users#new'
-
+  get 'new_event_ticket_path' => 'tickets#new'
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
 

@@ -10,7 +10,7 @@ def create
         if @user.save  #if it saves we flash a message and redirect to the home
             flash[:success] = "User created successfully"
             session[:user_id] = @user.id  #LOG IN STRAIGHT AWAY AFTER THE USER SIGN IN
-            redirect_to incoming_messages_path
+            redirect_to events_path
 
             
         else 
