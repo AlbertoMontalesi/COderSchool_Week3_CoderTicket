@@ -37,8 +37,8 @@ The person with best test coverage will win a small present from the instructor 
 
 #### Users
 
-* [ ] User can sign up by providing their email, password, and name.
-* [ ] User can login using an email and password.
+* [ x] User can sign up by providing their email, password, and name.
+* [x ] User can login using an email and password.
 * [ ] Users can create events.
 * [ ] Users must click "publish event" before an event becomes viewable to other users.
     * **HINT**: use `published_at:datetime` and `Event.published` scope (class method)
@@ -73,7 +73,7 @@ Describe any challenges encountered while building the app.
 
 ## License
 
-    Copyright [yyyy] [name of copyright owner]
+    Copyright [2017] [Alberto Montalei]
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
