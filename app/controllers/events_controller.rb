@@ -1,6 +1,8 @@
 class EventsController < ApplicationController
-  def index
-    @events = Event.all
+
+  def index #show only the events in the future 
+     @upcoming_events = Event.where("starts_at >= ?", Time.now)
+      @past_events = Event.where("starts_at < ?", Time.now)
 
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
