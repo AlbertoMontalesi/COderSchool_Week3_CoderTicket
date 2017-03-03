@@ -10,12 +10,7 @@ class Event < ActiveRecord::Base
   
 
   #to validate that the starting date of the event is not in the past 
-  validate :start_at_cannot_be_in_the_past
-  def start_at_cannot_be_in_the_past
-      unless starts_at.future?
-        errors.add(:starts_at, "can't be in the past")
-      end
-  end
+ 
 
 
 

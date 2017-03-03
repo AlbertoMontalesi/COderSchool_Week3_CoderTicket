@@ -14,13 +14,13 @@
   </div>
 </div>
 <div class="container-fluid events-list">
+
+
+<!-- FIX THIS -->
 <!-- if not upcoming events print something -->
-    <% @upcoming_events.in_groups_of(3) do |g| %>
-      <div class="row">
-        <% g.compact.each do |e| %>
-            <%= render partial: 'card', locals: {event: e} %>
-        <% end %>
-      </div>  
+    <% @upcoming_events.each do |g| %>
+        <div class="row">
+              <%= render partial: 'card', locals: {event:g} %>
+        </div>  
     <% end %>
   </div>
-</div>

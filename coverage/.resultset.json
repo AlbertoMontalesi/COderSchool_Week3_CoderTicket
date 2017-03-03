@@ -1,7 +1,7 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/spec/controllers/tickets_controller.spec.rb": [
+      "/home/alberto/Desktop/Ticketbox/CoderTicket/spec/views/events/index.html.erb_spec.rb": [
         1,
         null,
         1,
@@ -9,8 +9,6 @@
         1,
         1,
         0,
-        null,
-        null,
         null,
         null,
         null
@@ -659,7 +657,7 @@
       "/home/alberto/Desktop/Ticketbox/CoderTicket/app/helpers/events_helper.rb": [
         1,
         1,
-        0,
+        1,
         null,
         null
       ],
@@ -674,61 +672,8 @@
       "/home/alberto/Desktop/Ticketbox/CoderTicket/app/helpers/users_helper.rb": [
         1,
         null
-      ],
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/app/controllers/tickets_controller.rb": [
-        1,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        null,
-        null
-      ],
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/app/controllers/application_controller.rb": [
-        1,
-        null,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        1,
-        0,
-        0,
-        0,
-        null,
-        null,
-        null,
-        1,
-        0,
-        0,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/app/models/event.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null
       ]
     },
-    "timestamp": 1488353385
+    "timestamp": 1488448635
   }
 }
