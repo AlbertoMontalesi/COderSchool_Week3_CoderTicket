@@ -20,10 +20,10 @@ class EventsController < ApplicationController
     @event = Event.new event_params
     if @event.save
       flash[:success] =  "Event created!"
-      redirect_to root_path #to change
+      redirect_to event_path #to change
     else
       
-      render event_path
+      render new_event_path
     end
   end
 
