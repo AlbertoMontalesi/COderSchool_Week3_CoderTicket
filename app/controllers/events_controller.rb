@@ -45,6 +45,13 @@ before_action :require_user, only: [:create, :new]
     @events = current_user.events
   end
 
+  def destroy
+    @event.destroy
+      render show_mine_path
+      flash.now[:success] = "Event successfully deleted"
+  end
+
+
 
   def publish #must publish before an event is visible
     @event = Event.find(params[:id])

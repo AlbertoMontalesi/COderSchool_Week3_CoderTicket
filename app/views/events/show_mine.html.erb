@@ -1,9 +1,29 @@
 <div class="container">
-
-     <% @events.each do |e| %>
-        <h1> <%= e.name %> </h1>
-
+    <div class="row">
+        <!-- dispaly ech event created by the user in a card -->
+    <% @events.each do |e| %>
+        <div class="card col-sm-6">
+            <%= image_tag e.hero_image_url, class:'card-img-top' %>
+            <div class="card-block">
+                <div class="card-title">
+                    <%= e.name %>
+                </div>
+                <div class="card-text">
+                    <%= e.extended_html_description %>
+                </div>
+                <%= link_to 'Edit', edit_event_path(id: e.id), class:'btn' %>
+                <%= link_to 'Delete', event_path(id: e.id), method: 'delete', class:'btn btn-danger', data: {confirm: "Are you sure?"}%>
+            </div>
+        
+        
+        
+        </div> <!-- end card -->
      <% end %>
 
+    </div>
 
-</div>
+       
+</div> <!-- end container -->
+
+
+
