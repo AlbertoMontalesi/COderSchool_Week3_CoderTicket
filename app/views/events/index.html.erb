@@ -17,8 +17,9 @@
 
 
 <!-- FIX THIS -->
-<!-- if not upcoming events print something -->
-    <% @upcoming_events.each do |g| %>
+<!-- if not upcoming events print something --> 
+<!-- change to upcoming once finished developing -->
+    <% @past_events.each do |g| %>
         <div class="row">
               <%= render partial: 'card', locals: {event:g} %>
         </div>  

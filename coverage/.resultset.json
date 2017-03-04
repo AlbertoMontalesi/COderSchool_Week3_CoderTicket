@@ -1,28 +1,13 @@
 {
   "RSpec": {
     "coverage": {
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/spec/models/event_spec.rb": [
+      "/home/alberto/Desktop/Ticketbox/CoderTicket/spec/views/events/index.html.erb_spec.rb": [
         1,
         null,
         1,
-        null,
         1,
         1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
+        0,
         null,
         null,
         null
@@ -672,7 +657,7 @@
       "/home/alberto/Desktop/Ticketbox/CoderTicket/app/helpers/events_helper.rb": [
         1,
         1,
-        0,
+        1,
         null,
         null
       ],
@@ -691,56 +676,8 @@
       "/home/alberto/Desktop/Ticketbox/CoderTicket/app/helpers/venues_helper.rb": [
         1,
         null
-      ],
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/app/models/event.rb": [
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        null,
-        null,
-        1,
-        0,
-        null,
-        null,
-        null,
-        null
-      ],
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/app/models/venue.rb": [
-        1,
-        1,
-        1,
-        null
-      ],
-      "/home/alberto/Desktop/Ticketbox/CoderTicket/app/models/category.rb": [
-        1,
-        1,
-        1,
-        null
       ]
     },
-    "timestamp": 1488536922
+    "timestamp": 1488539021
   }
 }

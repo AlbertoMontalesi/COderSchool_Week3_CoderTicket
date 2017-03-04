@@ -1,9 +1,10 @@
 require 'rails_helper'
+#gives error ActionView::Template::Error:
+       #undefined method `each' for nil:NilClass
 
-RSpec.describe "events/index", type: :view do
+RSpec.describe "root_path", type: :view do
   it "renders Discover upcoming events in a header tag" do
-    assign(:events, [])
-    render
+     render :template => "events/index.html.erb"
     expect(rendered).to include("<h2>Discover upcoming messages </h2>")
   end
 

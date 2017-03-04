@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :users
+  
   root 'events#index'
   get '/upcoming' => 'events#index' 
   get '/sign_up' => 'users#new'
@@ -8,10 +8,17 @@ Rails.application.routes.draw do
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
 
+  resource :venues
+  resources :users
   resources :events do
+    collection do
+      get :search
+      get :show_mine
+      get :publish
+      get :edit
+    end
     resources :tickets
-
-
+    #resources :orders  
   
  
   
