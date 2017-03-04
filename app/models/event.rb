@@ -8,6 +8,7 @@ class Event < ActiveRecord::Base
   validates_uniqueness_of :name, uniqueness: {scope: [:venue, :starts_at]}
 
 
+  scope :upcoming, -> {where("starts_at > (?) And is_published = (?)", Time.now, true)}
   
 
   #to validate that the starting date of the event is not in the past 

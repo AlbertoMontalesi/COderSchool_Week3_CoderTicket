@@ -1,3 +1,10 @@
 <h1>Edit your event </h1>
 
 <%= render 'form' %>
+<% unless @event.is_published %>
+    <div class="row">
+        <%= link_to publish_event_path(@event), class: 'btn ' do %>
+            <b>Publish this event</b>
+        <% end %>
+    </div>
+<% end %>

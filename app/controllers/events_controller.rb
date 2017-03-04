@@ -1,14 +1,12 @@
 class EventsController < ApplicationController
-before_action :require_user, only: [:create, :new]
+before_action :require_user, only: [:create, :new, :edit,:publish]
 
   def index #show only the events in the future 
-      @upcoming_events = Event.where("starts_at >= ?", Time.now)
-      @past_events = Event.where("starts_at < ?", Time.now)
-
+      @events = Event.upcoming
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
     else
-      @events = Event.all.order("created_at DESC")
+      @events = Event.upcoming.order("created_at DESC")
     end
 
   end
@@ -39,6 +37,7 @@ before_action :require_user, only: [:create, :new]
 
   def show
     @event = Event.find(params[:id])
+    
   end
 
    def show_mine #shows the event created by the current user
@@ -55,9 +54,8 @@ before_action :require_user, only: [:create, :new]
 
   def publish #must publish before an event is visible
     @event = Event.find(params[:id])
-    if @event.update_attributes(:is_published => true)
+    @event.update_attributes(:is_published => true)
       redirect_to events_path
-    end
   end
 
 

@@ -15,8 +15,10 @@ Rails.application.routes.draw do
     collection do
       get :search
       get :show_mine
-      get :publish
       get :edit
+    end
+    member do #target a single event so we put in member
+      get :publish
     end
     resources :tickets
     #resources :orders  
