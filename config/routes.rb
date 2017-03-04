@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'event_path' => 'events#show'
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
+  get "/events/show_mine" => 'events#show_mine' #display my events
 
   resource :venues
   resources :users

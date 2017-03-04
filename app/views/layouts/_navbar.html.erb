@@ -26,8 +26,11 @@
             <% end %>  <!-- seach form -->
         </li>
         <% if current_user %>
-             <li class="nav-item active nav-link">
+             <li class="nav-item nav-link">
                 <%= link_to 'Create an Event', new_event_path %>
+             </li>
+             <li class="nav-item nav-link">
+                <%= link_to 'My Events', events_show_mine_path %>
              </li>
         <% end %>
     </ul>

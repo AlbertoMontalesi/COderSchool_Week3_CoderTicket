@@ -22,7 +22,7 @@ before_action :require_user, only: [:create, :new]
     @event = current_user.events.build(event_params)
     if @event.save
       flash[:success] =  "Event created!"
-      redirect_to edit_event_path(:event_id => @event.id)
+      redirect_to edit_event_path(:id => @event.id)
     else
       render new_event_path
     end
@@ -57,7 +57,7 @@ before_action :require_user, only: [:create, :new]
 private
 
 def event_params
-  params.require(:event).permit(:name, :starts_at, :ends_at, :venue_id, :hero_image_url, :extended_html_description, :category_id)
+  params.require(:event).permit(:name, :starts_at,:ends_at, :venue_id, :hero_image_url, :extended_html_description, :category_id)
 end
 
 end
