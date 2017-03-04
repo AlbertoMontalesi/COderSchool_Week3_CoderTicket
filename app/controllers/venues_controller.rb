@@ -4,20 +4,23 @@ class VenuesController < ApplicationController
         @venues = Venue.all
     end
 
+
     def new
         @venues = Venue.new
     end
 
     def create
-        @venue = venue.new(Venue_params)
-        if @venue.save
-        redirect_to venues_index_path
+        @venue = Venue.new venue_params
+        if @venue.save!
+            redirect_to venues_path
+        else
+            flash.now[:failure] = 'failed to create venue'
         end
     end
 
     private
-        def Venue_params
-        params.require(:Venue).permit(:name, :region_id, :full_address)
+        def venue_params
+        params.require(:venue).permit(:name, :region_id, :full_address)
     end
 
 

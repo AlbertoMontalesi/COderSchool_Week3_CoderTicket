@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#new'
   get 'new_event_ticket_path' => 'tickets#new'
   get 'event_path' => 'events#show'
+  get 'venues' => 'venues#index'
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
   get "/events/show_mine" => 'events#show_mine' #display my events
