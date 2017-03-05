@@ -3,8 +3,8 @@ Rails.application.routes.draw do
   root 'events#index'
   get '/upcoming' => 'events#index' 
   get '/sign_up' => 'users#new'
-  get 'new_event_ticket_path' => 'tickets#new'
-  get 'event_path' => 'events#show'
+  get 'new_event_ticket' => 'tickets#new'
+  get 'event' => 'events#show'
   get 'venues' => 'venues#index'
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   resource :venues
   resources :users
   resources :events do
+    resources :tickets
+    resources :orders, only: [:new,:create,:show]
     collection do
       get :search
       get :show_mine
@@ -21,8 +23,7 @@ Rails.application.routes.draw do
     member do #target a single event so we put in member
       get :publish
     end
-    resources :tickets
-    #resources :orders  
+    
   
  
   

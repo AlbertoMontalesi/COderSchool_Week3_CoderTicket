@@ -1,0 +1,49 @@
+<div class="container"> 
+    <h1>Your booking details</h1>
+    <div class="row">
+        <div class="col-12">
+            <p>Name:<b> <%= @order.name %> </b> </p>
+        </div>
+        <div class="col-12">
+            <p>Address: <b> <%= @order.address %> </b> 
+            </p>
+        </div>
+        <div class="col-12">
+            <p>Phone Number:<b> <%= @order.phone %> </b> </p>
+        </div>
+        <div class="col-12">
+            <p> Date of booking: <b> <%= @order.created_at.strftime("%A, %d %b %Y") %> </b></p>
+        </div>
+        </div>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+                <tr>
+                <th>Item</th>
+                <th>Price per Ticket</th> 
+                <th>Quantity</th>
+                <th>Total per ticket type</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><%= @order.ticket_type.name %></td>
+                    <!-- price per single ticket -->
+                    <td><%= number_to_currency(@order.ticket_type.price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %> </td>
+                    <td><%= @order.quantity %></td>
+                    <!-- total price per type of tickets -->
+                    <td><%= number_to_currency(@order.ticket_type.price * @order.quantity, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %> </td>
+                </tr>
+                <tr>
+                    <td> Total </td>
+                    <td></td>
+                    <td></td>
+                    <!-- total overll cost of all tickets -->
+                    <td><%= number_to_currency(@order.total_price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</div> <!-- container end -->

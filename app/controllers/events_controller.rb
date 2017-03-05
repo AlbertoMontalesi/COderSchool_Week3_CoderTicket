@@ -22,6 +22,7 @@ before_action :require_user, only: [:create, :new, :edit,:publish]
       flash[:success] =  "Event created!"
       redirect_to edit_event_path(:id => @event.id)
     else
+      flash[:error] = 'An error occured during the creation'
       render new_event_path
     end
   end
@@ -53,9 +54,14 @@ before_action :require_user, only: [:create, :new, :edit,:publish]
 
 
   def publish #must publish before an event is visible
-    @event = Event.find(params[:id])
-    @event.update_attributes(:is_published => true)
-      redirect_to events_path
+      if @event.enough_ticket_types?
+        @event = Event.find(params[:id])
+        @event.update_attributes(:is_published => true)
+          redirect_to events_path
+      else
+        flash[:error] = "Please select at least one ticket type"
+        redirect_to event_path
+      end
   end
 
 

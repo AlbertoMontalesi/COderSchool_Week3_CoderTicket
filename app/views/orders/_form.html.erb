@@ -1,0 +1,27 @@
+<%= form_for [event,order] do |o| %>
+    <% if order.errors.any? %>
+        <%= order.errors.full_messages.to_sentence %>
+    <% end %>
+
+    <div class="form-group">
+        <%= o.label :ticket_type_id %>
+        <%= o.select :ticket_type_id, event.ticket_types.collect { |t| [t.name,t.id]}, class:'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= o.label :name %>
+        <%= o.text_field :name, placeholder: 'Name', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= o.label :phone %>
+        <%= o.text_field :phone, placeholder: 'Phone', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= o.label :address %>
+        <%= o.text_field :address, placeholder: 'Address',placeholder: 'Description', class: 'form-control' %>
+    </div>
+    <div class="form-group">
+        <%= o.label :quantity %>
+        <%= o.text_field :quantity, placeholder: 'Quantity' ,class: 'form-control' %>
+    </div>
+    <%= o.submit 'Submit', class: 'btn btn-success' %>
+<% end %>
