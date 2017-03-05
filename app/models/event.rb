@@ -3,6 +3,7 @@ class Event < ActiveRecord::Base
   belongs_to :category
   belongs_to :user
   has_many :ticket_types
+
   accepts_nested_attributes_for :venue, :ticket_types
   #has_many :orders
   validates_presence_of :extended_html_description, :venue, :category, :starts_at
@@ -33,8 +34,6 @@ class Event < ActiveRecord::Base
       errors.add(:ends_at, "can't be before starting date ")
     end
   end
-
-
 
   def self.search(search) 
     where("name ILIKE ?",  "%#{search}%") 

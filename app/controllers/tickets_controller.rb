@@ -1,6 +1,6 @@
 class TicketsController < ApplicationController
 
-  before_action :set_event
+  before_action :set_ticket_type
   before_action :require_user
 
   def index
@@ -12,14 +12,15 @@ class TicketsController < ApplicationController
     end
   end
   
+  
   private
 
-  def set_event
-    @event = Event.find(params[:event_id])
-    @ticket_type = @event.ticket_types.find(params[:id])
-  end
+    def set_ticket_type
+      @event = Event.find(params[:event_id])
+      @ticket_type = @event.ticket_types.find(params[:id])
+    end
 
   def ticket_type_params
-      params.permit(:event_id, :name, :price, :max_quantity)
+      params.require(:ticket_type).permit(:event_id, :name, :price, :max_quantity)
     end
 end

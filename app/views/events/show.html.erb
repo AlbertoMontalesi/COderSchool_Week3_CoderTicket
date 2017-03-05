@@ -20,10 +20,17 @@
           <div class="clearfix"></div>
         <% end %>
         <%= link_to event_tickets_path(@event) do %>
-          <button class='btn btn-lg btn-block btn-danger'> BOOK NOW </button>
+          <button class='btn btn-lg btn-block btn-danger'>BOOK NOW</button>
+        <% end %>
+        <% if current_user && current_user.id == @event.user_id %>
+          <%= link_to edit_event_path(id: @event.id) do %>
+            <button class="btn btn-lg btn-block btn-info">Edit</button>
+          <% end %>
         <% end %>
       </div>
     </div>
+  
+
     <div class="col-md-9 event-content">
       <div class="hero-img hidden-sm-down" style="background-image: url(<%= @event.hero_image_url %>); background-size: cover;"> </div>
       <div class="container">

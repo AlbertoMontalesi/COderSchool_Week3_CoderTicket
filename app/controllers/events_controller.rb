@@ -4,7 +4,7 @@ before_action :require_user, only: [:create, :new, :edit,:publish]
   def index #show only the events in the future 
       @events = Event.upcoming
     if params[:search]
-      @events = Event.search(params[:search]).order("created_at DESC")
+      @events = Event.upcoming.search(params[:search]).order("created_at DESC")
     else
       @events = Event.upcoming.order("created_at DESC")
     end

@@ -5,15 +5,16 @@ Rails.application.routes.draw do
   get '/sign_up' => 'users#new'
   get 'events' => 'events#show'
   get 'venues' => 'venues#index'
+
   resources :sessions, only: [:new, :create]
   delete 'logout' => 'sessions#destroy'
   get "/events/show_mine" => 'events#show_mine' #display my events
 
   resource :venues
   resources :users
+
   resources :events do
-    resources :tickets
-    resources :orders, only: [:new,:create,:show]
+    
     collection do
       get :search
       get :show_mine
@@ -22,11 +23,9 @@ Rails.application.routes.draw do
     member do #target a single event so we put in member
       get :publish
     end
-    
-  
+    resources :tickets
+    resources :orders, only: [:new,:create,:show]
  
-  
-  
   end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

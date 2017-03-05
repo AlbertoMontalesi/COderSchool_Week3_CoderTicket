@@ -16,6 +16,4 @@ class Order < ApplicationRecord
     def total_price_calculation
         self.total_price = ticket_type_price * self.quantity
     end
-
-
 end
