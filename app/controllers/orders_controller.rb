@@ -16,7 +16,7 @@ class OrdersController < ApplicationController
         @order = Order.new order_params
         @order.total_price_calculation
         @order.quantity_remaining
-        if @order.save
+        if @order.save!
             redirect_to event_order_path(id: @order.id)
             flash[:success] = "Your order was created successfully"
         else

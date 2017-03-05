@@ -45,15 +45,24 @@
     <% if @event.user_id == current_user.id %>
       <h5>Add ticket types</h5>
 
-      <%= form_tag nil, method: 'get' do %>
-          <%= hidden_field_tag :event_id, params[:event_id] %>
-          <div class="form-inline">
-            <%= text_field_tag :name, params[:name], placeholder: 'Name', class: 'form-control' %>
-            <%= text_field_tag :price, params[:price], placeholder: 'Price', class: 'form-control' %>
-            <%= text_field_tag :max_quantity, params[:max_quantity], placeholder: 'Quantity', class: 'form-control' %>
-            <%= submit_tag 'Add', class: 'btn btn-warning' %>
-          </div>
-        <% end %>
+          <%= form_for(:ticket_type, :url => {:controller => 'tickets', :action => 'create'}) do |f| %>
+        <fieldset class="form-group">
+          <label for="name">Type Name: </label>
+          <%= f.text_field :name, id: "name", class: "form-control", placeholder: "type name" %>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="max_quantity">Max Quantity: </label>
+          <%= f.number_field :max_quantity, id: "max_quantity", class: "form-control", placeholder: "Max quantity" %>
+        </fieldset>
+
+        <fieldset class="form-group">
+          <label for="price">Price: </label>
+          <%= f.number_field :price, id: "price", class: "form-control", placeholder: "price" %>
+        </fieldset>
+
+        <button type="submit" class="btn btn-success">Create</button>
+    <% end %>
       <% else %>
         <div class="col-md-2 col-md-offset-5">
           <% if @event.total_quantity == 0 %>
