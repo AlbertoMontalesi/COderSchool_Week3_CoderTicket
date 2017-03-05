@@ -1,7 +1,8 @@
 class OrdersController < ApplicationController
-    before_action :set_new_oorder, only: [:show]
+    before_action :set_new_order, only: [:show]
 
-
+    def show
+    end
 
     def new 
         @event = Event.find(params[:event_id])
@@ -26,7 +27,7 @@ class OrdersController < ApplicationController
 
     private
 
-    def set_new_oorder
+    def set_new_order
         @order = Order.find(params[:id])
     end
 

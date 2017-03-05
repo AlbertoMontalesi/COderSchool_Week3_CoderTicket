@@ -1,6 +1,7 @@
 <h1>Edit your event </h1>
 
 <%= render 'form' %>
+<%= link_to 'Create tickets for this event',                event_tickets_path(@event) %>
 <% unless @event.is_published %>
     <div class="row">
         <%= link_to publish_event_path(@event), class: 'btn ' do %>
