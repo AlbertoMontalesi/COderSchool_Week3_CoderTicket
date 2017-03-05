@@ -4,10 +4,12 @@ class Order < ApplicationRecord
     validates :name, :phone, :address, presence: true
     validates :quantity, presence: true
 
-    def quantity_remaining
-        ticket_type.max_quantity -= Order.quantity
-        ticket_type.save
-    end
+    
+
+    #def quantity_remaining
+       # ticket_type.save
+        #ticket_type.max_quantity -= Order.quantity
+   # end
 
     def ticket_type_price
         ticket_type.price unless nil

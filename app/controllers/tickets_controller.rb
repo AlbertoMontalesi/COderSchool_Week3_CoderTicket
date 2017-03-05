@@ -4,13 +4,12 @@ class TicketsController < ApplicationController
   before_action :require_user
 
   def index
-    @ticket_types = @event.ticket_types
+    @ticket_type = @event.ticket_types
   end
 
   def create
-    @ticket_types = @event.ticket_types.build(ticket_type_params)
-    @order.total_price_calculation
-    @order.quantity_remain
+    @ticket_type = @event.ticket_types.build(ticket_type_params)
+    
 
     if @ticket_type.save
       flash[:success] ='ticket created successfully'

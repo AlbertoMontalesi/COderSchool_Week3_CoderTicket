@@ -15,12 +15,16 @@ class OrdersController < ApplicationController
         @ticket_types = @event.ticket_types
         @order = Order.new order_params
         @order.total_price_calculation
-        
-        if @order.save!
-            redirect_to event_order_path(id: @order.id)
-            flash[:success] = "Your order was created successfully"
-        else
+        #@order.quantity_remaining
+        if @order.quantity > 10
+            flash[:error] = "you cannot order more than 10 tickets at a time"
             render 'new'
+        
+            elsif @order.save
+                redirect_to event_order_path(id: @order.id)
+                flash[:success] = "Your order was created successfully"
+            else
+                render 'new'
         end
     end
 
