@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  
+  it 'is not valid when password is blank'do
+    testuser = User.new(password:"")
+    expect(testuser).to_not be_valid
+    end
 end

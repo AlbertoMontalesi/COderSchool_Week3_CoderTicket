@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe Order, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+
+  it 'is not valid when quantity is more than 10'do
+    testorder = Order.new(quantity: 15)
+    expect(testorder).to_not be_valid
+    end
 end

@@ -17,7 +17,19 @@ RSpec.describe Event, :type => :model do
         expect(testevent.ends_at).to be < testevent.starts_at
     end
 
+    describe '.upcoming' do
+        it 'returns [] when there is no event' do
+        expect(Event.upcoming).to eq []
+        end
+    end
 
+     describe "#venue_name" do
+        it "returns venue name" do
+            venue = Venue.new name: "test venue"
+            event = Event.new venue: venue
+            expect(event.venue.name).to eq "test venue"
+    end
+  end
 
 
 
