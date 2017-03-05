@@ -8,7 +8,10 @@ class TicketsController < ApplicationController
   end
 
   def create
-    @ticket_type = @event.ticket_types.build(ticket_type_params)
+    @ticket_types = @event.ticket_types.build(ticket_type_params)
+    @order.total_price_calculation
+    @order.quantity_remain
+
     if @ticket_type.save
       flash[:success] ='ticket created successfully'
       redirect_to event_tickets_path

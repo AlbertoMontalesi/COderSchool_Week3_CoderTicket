@@ -40,7 +40,7 @@
                     <td></td>
                     <td></td>
                     <!-- total overll cost of all tickets -->
-                    <td><%= number_to_currency(@order.total_price, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
+                    <td><%= number_to_currency(@order.total, precision: 0, unit: "VND", delimiter: ",", format: "%n %u") %></td>
                 </tr>
             </tbody>
         </table>

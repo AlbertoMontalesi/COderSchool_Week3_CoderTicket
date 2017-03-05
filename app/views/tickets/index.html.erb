@@ -42,7 +42,7 @@
 
 
     <!-- if this event as creted by this user he can add tickets -->
-    <% if @event.user_id == current_user.id %>
+    <% if current_user && current_user.id == @event.user_id %>
       <h5>Add ticket types</h5>
 
           <%= form_for(:ticket_type, :url => {:controller => 'tickets', :action => 'create'}) do |f| %>
@@ -64,12 +64,10 @@
         <button type="submit" class="btn btn-success">Create</button>
     <% end %>
       <% else %>
-        <div class="col-md-2 col-md-offset-5">
-          <% if @event.total_quantity == 0 %>
-            <button class="btn btn-lg btn-block disabled">Sold Out</button>
-          <% else %>
-            <a href="<%= new_event_ticket_order_path %>"><button class="btn btn-success btn-lg btn-block">Buy</button></a>
-          <% end %>
+          <div class="col-md-2 col-md-offset-5">
+          
+            <a href="<%= new_event_order_path %>"><button class="btn btn-success btn-lg btn-block">Buy</button></a>
+          
         </div>
       <% end %>
       <div class="col-md-2 col-md-offset-5">
@@ -84,10 +82,5 @@
 
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-2 col-md-offset-5">
-      <button class="btn btn-success btn-lg btn-block"> Buy </button>
-    </div>
-  <div>
 </div>
 

@@ -5,7 +5,7 @@ class Order < ApplicationRecord
     validates :quantity, presence: true
 
     def quantity_remaining
-        ticket_type.max_quantity -= self.quantity
+        ticket_type.max_quantity -= Order.quantity
         ticket_type.save
     end
 
@@ -14,6 +14,6 @@ class Order < ApplicationRecord
     end
 
     def total_price_calculation
-        self.total_price = ticket_type_price * self.quantity
+        self.total = ticket_type_price * self.quantity
     end
 end
