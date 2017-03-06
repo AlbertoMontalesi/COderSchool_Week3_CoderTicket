@@ -20,3 +20,100 @@ body {
 .navbar {
   color: white;
 }
+
+//LINKS
+
+a, a:hover, a:active {
+  text-decoration: none!important;
+  color: inherit!important;
+}
+
+//NAVBAR
+.navbar-brand {
+  min-width: 200px;
+}
+
+
+//HOMEPAGE
+.home-bg {
+  background-image: url(http://gconnect.edu.vn/wp-content/uploads/2016/07/full-slide1.jpg);
+  background-attachment: fixed;
+  background-position:center;
+  background-size: cover;
+  min-height:500px;
+  width: 100%;
+}
+
+//LOGIN/SIGNUP FORMS
+.user-form * {
+  margin-top: 15px;
+
+}
+.user-form {
+  width: 50%;
+  padding: 20px;
+  margin: 10px auto;
+  text-align: center;
+}
+
+.user-form a {
+  color: #3498db !important;
+}
+.user-form input::placeholder {
+  padding-left:5px;
+}
+
+
+
+//EVENTFORM AND VENUE FORM
+.event-form {
+  width: 50%;
+  padding: 20px;
+  margin: 10px auto;
+  text-align: left;
+}
+
+#new_event .field, 
+.edit_event .field,
+.new_venue .field {
+  display: flex;
+  flex-direction: row;
+  margin-top: 15px;
+  
+}
+#new_event .field label, 
+.edit_event .field label,
+.new_venue .field label {
+  width:25%;
+}
+
+#new_event .field input,
+.edit_event .field input,
+.new_venue .field input {
+  width:70%;
+}
+
+
+
+//STYLE FOR SUBMIT BUTTONS
+.form_submit, {
+  background-color: #2ecc71 ;
+  border:none;
+  border-radius: 2%;
+  cursor:pointer;
+}
+.form_submit:hover, .form-submit:active {
+  background-color: lighten(#2ecc71,10%);
+}
+
+
+
+//CARD IMAGE
+.card-img-top {
+  width: 100% !important;
+}
+
+//STYLE THE BUTTON BACK IN THE TICKET PAGE
+.btn-warning {
+  margin-top: 15px;
+}

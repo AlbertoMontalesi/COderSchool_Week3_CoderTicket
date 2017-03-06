@@ -54,8 +54,8 @@
 }
 
 .events-list {
-    margin-top: 20px;
-    padding: 30px 150px;
+    padding-bottom :20px;
+    padding-top: 25px;
     background-color: $gray-lighter;
     .card {
         margin-bottom: 20px;
@@ -79,6 +79,7 @@
 
 .events-detail {
     .sidebar {
+        width:30%;
         padding-top: 80px;
         color: rgb(233, 237, 240);
         background-color: #303B46;
@@ -113,7 +114,8 @@
         }
     }
     .event-content {
-        float: right;
+        width:70%;
+        margin-left:30%;
         h3 {
             font-weight: bold;
             font-size: 25px;

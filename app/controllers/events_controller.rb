@@ -58,7 +58,8 @@ before_action :require_user, only: [:create, :new, :edit,:publish]
       if @event.enough_ticket_types?
         @event = Event.find(params[:id])
         @event.update_attributes(:is_published => true)
-          redirect_to events_path
+          flash[:success] = "Event published"
+          redirect_to root_path
       else
         flash.now[:error] = "Please select at least one ticket type"
         render 'edit'

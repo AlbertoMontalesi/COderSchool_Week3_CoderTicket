@@ -21,7 +21,7 @@
     </div>
     <div class="form-group">
         <%= o.label :quantity %>
-        <%= o.text_field :quantity, placeholder: 'Quantity' ,class: 'form-control' %>
+        <%= o.number_field :quantity, placeholder: 'Quantity' ,class: 'form-control' %>
     </div>
     <%= o.submit 'Submit', class: 'btn btn-success' %>
 <% end %>

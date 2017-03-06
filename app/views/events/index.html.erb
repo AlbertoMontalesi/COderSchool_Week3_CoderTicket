@@ -1,19 +1,18 @@
-<div class='events-header' style='background-image: url(<%= header_background_image_url %>)'>
-  <div class="container">
+<div class='events-header home-bg'>
+  <div class="container ">
     <h2> Discover upcoming events </h2>
-
-
    </div>
 </div>
-<div class="container-fluid events-list">
+<div class="events-list">
 
 
 <!-- FIX THIS -->
 <!-- if not upcoming events print something --> 
-<!-- change to upcoming once finished developing -->
-    <% @events.each do |g| %>
-        <div class="row">
-              <%= render partial: 'card', locals: {event:g} %>
-        </div>  
+<div class="container">
+  <div class="row"> 
+    <% @events.each do |g| %>          
+            <%= render partial: 'card', locals: {event:g} %>              
     <% end %>
+    </div>  
   </div>
+

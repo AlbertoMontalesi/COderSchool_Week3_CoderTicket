@@ -2,13 +2,12 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.tickets-buy {
-  background-color: $gray-lightest;
+.tickets-buy { 
   padding-bottom: 80px;
   .tickets-header {
     padding-top: 60px;
     padding-bottom: 30px;
-    background-image: image-url('header-bg-02.jpg');
+    background-image: url(http://gconnect.edu.vn/wp-content/uploads/2016/07/full-slide1.jpg);
     background-size: cover;
     text-shadow: 2px 3px 6px rgba(0, 0, 0, 0.5);  
     font-size: 14px;

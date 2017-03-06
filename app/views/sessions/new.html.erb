@@ -1,20 +1,20 @@
 
-<div class="row justify-content-center ">
+<div class="row justify-content-center user-form">
         <%= form_tag sessions_path do %>
-            <div class="col-xs-12">
+            <div class="col-12">
                  <h1>Log In</h1> 
             </div>
-            <div class="col-xs-12">
+            <div class="col-12">
                     <%= text_field_tag :email,params[:email], placeholder: "Email" %>
             </div>
-            <div class="col-xs-12">
+            <div class="col-12">
                 <%= password_field_tag :password,nil, placeholder: "Password" %>
             </div>
-            <div class="col-xs-12">
+            <div class="col-12">
                     <%= submit_tag "Log In", class:'form_submit' %>
             </div>
 
-             <div class="col-xs-12">
+             <div class="col-12">
             <%= link_to 'Or register here', new_user_path %>
         </div>
 

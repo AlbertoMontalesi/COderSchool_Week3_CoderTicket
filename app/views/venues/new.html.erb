@@ -1,4 +1,6 @@
-<%= form_for(@venues) do |v| %>
+<div class="container">
+<h1> Create a New Location</h1>
+    <%= form_for(@venues) do |v| %>
     <div class="field">
         <%= v.label :name %>
         <%= v.text_field :name %>
@@ -12,8 +14,10 @@
         <%= v.select :region_id, Region.all.map{|e| [e.name,e.id]} %>
     </div>
     <div class="actions">
-        <%=v.submit %>
+        <%=v.submit :class => 'form_submit' %>
     </div>
-    
+</div>
+
+
 
 <% end %>

@@ -1,3 +1,5 @@
+
+
 <%= form_for(@event) do |f| %>
   <% if @event.errors.any? %>
     <div id="error_explanation">
@@ -13,46 +15,46 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name%>
   </div>
 
-  <div class="field">
+  <div class="field ">
     <%= f.label :extended_html_description %>
     <%= f.text_area :extended_html_description %>
   </div>
 
-  <div class="field"> 
+  <div class="field "> 
     <%= f.label :category_id %>
     <%= f.select :category_id, Category.all.map{|e| [e.name,e.id]} %>
   </div>
  
-    <div class="field"> <!-- to fix -->
+    <div class="field "> <!-- to fix -->
         <%= f.label :region_id %>
         <%= f.select :venue_id, Region.all.map{|e| [e.name,e.id]} %> <!-- i need to display only the venus that belong to the selected region -->
     </div>
 
-    <div class="field"> 
+    <div class="field "> 
         <%= f.label :venue_id %>   
         <%= f.select :venue_id, Venue.where(region_id: Region.ids ).map{|f| [f.name,f.id]} %>
     </div>
 
-    <div class="field">
+    <div class="field ">
         <%= f.label :starts_at %>
         <%= f.date_field :starts_at %>
     </div>
 
-    <div class="field">
+    <div class="field ">
         <%= f.label :ends_at %>
         <%= f.date_field :ends_at %>
     </div>
 
 
-  <div class="field">
+  <div class="field ">
     <%= f.label :hero_image_url %>
     <%= f.text_field :hero_image_url %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit :class => 'form_submit'  %>
   </div>
 <% end %>

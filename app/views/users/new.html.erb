@@ -1,8 +1,8 @@
-<div class="row justify-content-center form-container">
+<div class="row justify-content-center user-form">
    
     <%= form_for @user do |f| %>
 
-        <div class="col-xs-12">
+        <div class="col-12">
         <!-- code to display errors -->
             <% if @user.errors.present? %>
                 <% @user.errors.messages.each do |key,value| %>
@@ -13,31 +13,31 @@
             <% end %> <!-- end if -->
         </div>
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <h1>REGISTER </h1>
         </div>    
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <%= f.text_field :name, placeholder: "Enter your full name"%>
         </div>
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <%= f.text_field :email, placeholder: "Email"%>
         </div>
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <%= f.password_field :password, placeholder: "Password"%>
         </div>
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <%= f.password_field :password_confirmation, placeholder: "Confirm Password"%>
         </div>
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <%= f.submit class:'form_submit' %>
         </div>
 
-        <div class="col-xs-12">
+        <div class="col-12">
             <%= link_to 'Already a User? Log in here', new_session_path%>
         </div>
 

@@ -12,6 +12,10 @@ class TicketsController < ApplicationController
     end
   end
 
+def showw
+  @event = Event.find(params[:event_id])
+    
+end
   
   private
 

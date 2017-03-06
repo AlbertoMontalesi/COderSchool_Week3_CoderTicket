@@ -1,17 +1,20 @@
 <div class="container">
+<h1> My Events</h1>
     <div class="row">
+    <!-- ADD a filter for published and non published events -->
         <!-- dispaly ech event created by the user in a card -->
     <% @events.each do |e| %>
         <div class="card col-sm-6">
             <%= image_tag e.hero_image_url, class:'card-img-top' %>
+
             <div class="card-block">
-                <div class="card-title">
+                <h4 class="card-title">
                     <%= e.name %>
-                </div>
-                <div class="card-text">
+                </h4>
+                <p class="card-text">
                     <%= e.extended_html_description %>
-                </div>
-                <%= link_to 'Edit', edit_event_path(id: e.id), class:'btn' %>
+                </p>
+                <%= link_to 'Edit', edit_event_path(id: e.id), class:'btn form_submit' %>
 
                 <%= link_to 'Delete', event_path(id: e.id), method: :delete, class:'btn btn-danger', data: {confirm: "Are you sure?"}%>
             </div>
@@ -21,7 +24,7 @@
         </div> <!-- end card -->
      <% end %>
 
-    </div>
+    </div> <!-- end row -->
 
        
 </div> <!-- end container -->

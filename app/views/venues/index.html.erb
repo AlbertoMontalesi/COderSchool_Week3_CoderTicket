@@ -1,15 +1,18 @@
-<h1>Locations</h1>
-<%= link_to "Create a new Location", new_venues_path %>
 
-<% @venues.each do |v| %>
-    <div class="card">
-        <div class="card-block">
-            <div class="card-title">
-                <%= v.name %>
-            </div>
-            <div class="card-subtitle">
-                <%= v.full_address %>
+<div class="container">
+    <h1>Locations</h1>
+    <%= link_to "Create a new Location", new_venues_path %>
+     <!-- need to add edit and delete -->
+    <% @venues.each do |v| %>
+        <div class="card">
+            <div class="card-block">
+                <div class="card-title">
+                    <%= v.name %>
+                </div>
+                <div class="card-subtitle">
+                    <%= v.full_address %>
+                </div>
             </div>
         </div>
-    </div>
-<% end %>
+    <% end %>
+</div>
