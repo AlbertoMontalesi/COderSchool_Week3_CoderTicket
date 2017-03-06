@@ -1,8 +1,9 @@
 <div class="container">
-<h1> My Events</h1>
+<h1> You created <%= @events.count %> Events</h1>
     <div class="row">
     <!-- ADD a filter for published and non published events -->
         <!-- dispaly ech event created by the user in a card -->
+    
     <% @events.each do |e| %>
         <div class="card col-sm-6">
             <%= image_tag e.hero_image_url, class:'card-img-top' %>
