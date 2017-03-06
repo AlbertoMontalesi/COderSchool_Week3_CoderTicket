@@ -10,8 +10,12 @@
 <!-- if not upcoming events print something --> 
 <div class="container">
   <div class="row"> 
+  <% if @events.empty? %>
+  <h1>There are no events available </h1>
+  <% else %>
     <% @events.each do |g| %>          
             <%= render partial: 'card', locals: {event:g} %>              
+    <% end %>
     <% end %>
     </div>  
   </div>

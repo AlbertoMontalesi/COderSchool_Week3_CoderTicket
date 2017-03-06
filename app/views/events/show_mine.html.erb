@@ -15,8 +15,6 @@
                     <%= e.extended_html_description %>
                 </p>
                 <%= link_to 'Edit', edit_event_path(id: e.id), class:'btn form_submit' %>
-
-                <%= link_to 'Delete', event_path(id: e.id), method: :delete, class:'btn btn-danger', data: {confirm: "Are you sure?"}%>
             </div>
         
         
