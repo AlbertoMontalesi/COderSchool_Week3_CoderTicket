@@ -12,7 +12,7 @@ class TicketsController < ApplicationController
     end
   end
 
-def showw
+def show
   @event = Event.find(params[:event_id])
     
 end
